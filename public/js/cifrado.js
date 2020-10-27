@@ -38,28 +38,28 @@ export default {
   },
   encriptar(mensaje, desplazamiento) {
     //Letras en donde buscaremos el mensaje que nos llega
-    const letras = 'abcdefghijklmnñopqrstuvwxyz';
+    const letras = 'abcdefghijklmnopqrstuvwxyz';
 
     //Recalculamos el desplazamiento para que nos de un numero menor a 27
-    desplazamiento = ((desplazamiento % 27) + 27) % 27;
+    desplazamiento = ((desplazamiento % 26) + 26) % 26;
 
     //Hacemos un remplace de solo letas entre a-z que se encuentren en el mensaje
     return mensaje.replace(
       /[a-z]/gi,
-      (letra) => letras[(letras.indexOf(letra) + desplazamiento) % 27]
+      (letra) => letras[(letras.indexOf(letra) + desplazamiento) % 26]
     );
   },
   desencriptar(mensaje, desplazamiento) {
     //Letras en donde buscaremos el mensaje que nos llega
-    const letras = 'abcdefghijklmnñopqrstuvwxyz';
+    const letras = 'abcdefghijklmnopqrstuvwxyz';
     //Recalculamos el desplazamiento para que nos de un numero menor a 27
 
-    desplazamiento = ((desplazamiento % 27) - 27) % 27;
+    desplazamiento = ((desplazamiento % 26) - 26) % 26;
     //Hacemos un remplace de solo letas entre a-z que se encuentren en el mensaje
 
     return mensaje.replace(
       /[a-z]/gi,
-      (letra) => letras[(letras.indexOf(letra) - desplazamiento) % 27]
+      (letra) => letras[(letras.indexOf(letra) - desplazamiento) % 26]
     );
   },
 };
