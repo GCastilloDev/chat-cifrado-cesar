@@ -1,0 +1,14 @@
+.mensaje__entrante {
+  border-radius: 0px 15px 15px 0px;
+  max-width: 80%;
+}
+
+.mensaje__saliente {
+  border-radius: 15px 0px 0px 15px;
+  max-width: 80%;
+}
+
+.chat {
+  height: 75vh;
+  overflow-y: scroll;
+}
